@@ -50,7 +50,9 @@ module SearchadminsHelper
     fieldCount = 0
     model_fields.each_with_object('') do |field, string|
       if fieldCount == 0
-        string << content_tag(:td, link_to(object.send(field), '/admin/logins/' + object.id.to_s))#code
+        #string << content_tag(:td, link_to(object.send(field), '/admin/login/' + object.id.to_s))#code
+        #string << content_tag(:td, link_to(object.send(field), '/admin/accounts/show/' + object.id.to_s))#code
+        string << content_tag(:td, link_to(object.send(field), '/admin/accounts/' + object.id.to_s))#code
       else
         string << content_tag(:td, object.send(field))
       end
